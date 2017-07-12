@@ -4,7 +4,7 @@ import { observable } from 'mobx';
 import moment from 'moment';
 import './grid.scss';
 
-import sortStore from './sort_store';
+import { sortStore } from './utils';
 
 @observer
 export default class Grid extends Component {
@@ -46,15 +46,23 @@ export default class Grid extends Component {
           style={{width: (100 / this.props.colMeta.length)}}
         >
           <p>{meta.displayName}</p>
-          <p className={(this._isSortedBy(i) && sortStore._sortOrder === "asc") ? "active-sort" : ""}>
-            <i onClick={this.resort.bind(this, 'asc', i)} className="fa fa-long-arrow-up"></i>
-          </p>
-          <p className={(this._isSortedBy(i) && sortStore._sortOrder === "dec") ? "active-sort" : ""}>
-            <i onClick={this.resort.bind(this, 'dec', i)} className="fa fa-long-arrow-down"></i>
-          </p>
+          { this._sortButtons(i) }
         </div>
       );
     });
+  }
+
+  _sortButtons = (index) => {
+    return (
+      <div className="sort-buttons">
+        <p className={(this._isSortedBy(index) && sortStore._sortOrder === "asc") ? "active-sort" : ""}>
+          <i onClick={this.resort.bind(this, 'asc', index)} className="fa fa-long-arrow-up"></i>
+        </p>
+        <p className={(this._isSortedBy(index) && sortStore._sortOrder === "dec") ? "active-sort" : ""}>
+          <i onClick={this.resort.bind(this, 'dec', index)} className="fa fa-long-arrow-down"></i>
+        </p>
+      </div>
+    );
   }
 
   _cells = () => {

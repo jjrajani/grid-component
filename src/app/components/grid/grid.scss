@@ -2,12 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   .grid-header {
-    border: solid blue 1px;
     display: flex;
     width: 100%;
     .grid-header-cell {
       border: solid purple 1px;
-      // width: 130px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       flex-grow: 1;
     }
   }
