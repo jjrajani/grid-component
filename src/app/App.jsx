@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
-import './App.scss';
+import { observer } from 'mobx-react';
+import { observable } from 'mobx';
 
+import './App.scss';
+import Filter from './components/filter';
+import server from '../db/server';
+
+@observer
 class App extends Component {
+
+  @observable filterData;
+
+  constructor(props) {
+    super(props);
+    server.getAnimals().then((res) => {
+       this.filterData = res.data;
+      console.log("Gots it", res.data)
+    });
+  }
+
   render() {
+    console.log(this.filterData);
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className='app'>
+        <Filter filterData={this.filterData}/>
       </div>
     );
   }
