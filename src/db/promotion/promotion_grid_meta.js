@@ -5,6 +5,11 @@ const PROMOTION_GRID_META = [
     sortType: 'string',
   },
   {
+    dataAcsr: 'eventStart',
+    displayName: 'Promotion Begins',
+    sortType: 'date',
+  },
+  {
     dataAcsr: 'durationDays',
     displayName: 'Duration',
     sortType: 'number',

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './header';
+import Footer from './footer';
 
 
 describe('Header component', () => {
   it('renders without crashing', async () => {
 
     const div = document.createElement('div');
-    ReactDOM.render(<Header />, div);
+    ReactDOM.render(<Footer />, div);
   });
 });
