@@ -131,15 +131,17 @@ export default class Grid extends Component {
     let lastCell = (i, length) => (i !== length - 1);
 
     /* Loop through Object keys to create a data cell for each key*/
-    return Object.keys(data).map((d, i) => {
+    let dataString = "";
+    Object.keys(data).forEach((d, i) => {
 
       /* If not the last key, add a comma to data string*/
-      return (
-        <p className="data" key={i}>
-          {data[d]} {d}{lastCell(i, Object.keys(data).length) ? "," : null}
-        </p>
-      );
+      dataString += (data[d] + " " + d + (lastCell(i, Object.keys(data).length) ? ", " : ""))
     });
+    return (
+      <p className="data">
+        {dataString}
+      </p>
+    );
   }
 
   _dateCell = (data) => {
