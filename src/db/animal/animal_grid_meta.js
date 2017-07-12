@@ -2,27 +2,27 @@ const ANIMAL_GRID_META = [
   {
     dataAcsr: 'name',
     displayName: 'Name',
-    filterType: 'string',
+    sortType: 'string',
   },
   {
     dataAcsr: 'species',
     displayName: 'Species',
-    filterType: 'string',
+    sortType: 'string',
   },
   {
     dataAcsr: 'dob',
     displayName: 'DOB',
-    filterType: 'date',
+    sortType: 'date',
   },
   {
     dataAcsr: 'dod',
     displayName: 'DOD',
-    filterType: 'date',
+    sortType: 'date',
   },
   {
     dataAcsr: 'age',
     displayName: 'Age',
-    filterType: 'number',
+    sortType: 'age',
   },
 ];
 

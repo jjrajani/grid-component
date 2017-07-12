@@ -30,6 +30,9 @@ export default class App extends Component {
     return (
       <div className='app'>
         <Header />
+        <div className="blurb">
+          <p>A React grid component.  This grid accepts an array of data and an array of colMeta.</p>
+        </div>
         <Grid
           colMeta={ANIMAL_GRID_META}
           gridData={this.animals || []}

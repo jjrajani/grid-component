@@ -2,15 +2,18 @@ const PROMOTION_GRID_META = [
   {
     dataAcsr: 'name',
     displayName: 'Name',
+    sortType: 'string',
   },
   {
     dataAcsr: 'durationDays',
     displayName: 'Duration',
-    suffix: 'Days'
+    sortType: 'number',
+    suffix: 'Days',
   },
   {
     dataAcsr: 'department',
     displayName: 'department',
+    sortType: 'string',
   },
   {
     dataAcsr: 'deal',
@@ -19,6 +22,8 @@ const PROMOTION_GRID_META = [
   {
     dataAcsr: 'timeLeft',
     displayName: 'Time Left',
+    sortType: 'number',
+    suffix: 'Days',
   },
 ];
 
