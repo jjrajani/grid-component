@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
-import './App.scss';
+import { observer } from 'mobx-react';
+import { observable } from 'mobx';
 
-class App extends Component {
+import './App.scss';
+import Filter from './components/filter';
+import Grid from './components/grid';
+import server from '../db/server';
+import { ANIMAL_COL_META } from '../db/animal';
+
+@observer
+export default class App extends Component {
+
+  @observable animals;
+
+  constructor(props) {
+    super(props);
+    server.getAnimals().then((res) => {
+       this.animals = res.data;
+    });
+  }
+
   render() {
+    console.log("APP", this.animals);
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className='app'>
+        <Filter
+          applyFilter={this.applyFilter}
+          filterData={this.animals}
+        />
+        <Grid
+          colMeta={ANIMAL_COL_META}
+          gridData={this.animals}
+        />
       </div>
     );
   }
-}
 
-export default App;
+  applyFilter = (data) => {
+    console.log("Applying filter on App", data)
+  }
+}

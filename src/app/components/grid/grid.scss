@@ -1,0 +1,33 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  .grid-header {
+    border: solid blue 1px;
+    display: flex;
+    width: 100%;
+    .grid-header-cell {
+      border: solid purple 1px;
+      // width: 130px;
+      flex-grow: 1;
+    }
+  }
+  .grid-body {
+    // border: solid green 2px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .row {
+      display: flex;
+      // border: solid orange 3px;
+      width: 100%;
+      .body-cell {
+        // border: solid pink 3px;
+        // width: 130px;
+        flex-grow: 1;
+        .data {
+          border: solid black 1px;
+        }
+      }
+    }
+  }
+}
