@@ -145,16 +145,19 @@ export default class Grid extends Component {
   }
 
   ageSort = (data, sortCol) => {
-    console.log('age sort', data, sortCol);
-    return data.sort((a, b) => {
+    /* first sort by month */
+    let sortedByMonth = data.sort((a, b) => {
       return this._sortOrder === 'asc'
       ? a[sortCol].months < b[sortCol].months ? -1 : 1
       : a[sortCol].months < b[sortCol].months ? 1 : -1;
-    }).sort((a, b) => {
+    });
+    /* then sort by year */
+    let sortedByYear = sortedByMonth.sort((a, b) => {
       return this._sortOrder === 'asc'
       ? a[sortCol].years < b[sortCol].years ? -1 : 1
       : a[sortCol].years < b[sortCol].years ? 1 : -1;
     });
+    return sortedByYear;
   }
 
 }
