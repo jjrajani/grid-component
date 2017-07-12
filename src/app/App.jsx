@@ -30,6 +30,9 @@ export default class App extends Component {
     return (
       <div className='app'>
         <Header />
+        <div className="blurb">
+          <p>A Responsive Grid Component for React</p>
+        </div>
         <Grid
           colMeta={ANIMAL_GRID_META}
           gridData={this.animals || []}
