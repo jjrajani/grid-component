@@ -40,7 +40,7 @@ export default class Grid extends Component {
     return data.map((d, i) => {
       let cells = this.buildCells(d);
       return (
-        <div className="row">
+        <div key={i} className="row">
           {cells}
         </div>
       )
@@ -50,11 +50,15 @@ export default class Grid extends Component {
   buildCells = (data) => {
     /* Map over item in array of gridData to build data row */
     return this.props.colMeta.map((meta, a) => {
-      let cell = this.buildCell(data, meta,);
+      let cell = this.buildCell(data, meta);
       return (
-        <p className="body-cell" style={{width: (100 / this.props.colMeta.length)}}>
+        <div
+          key={a}
+          className="body-cell"
+          style={{width: (100 / this.props.colMeta.length)}}
+        >
           {cell}
-        </p>
+        </div>
       );
     });
   }
@@ -62,33 +66,33 @@ export default class Grid extends Component {
   buildCell = (data, meta) => {
     /* Determine type of data to create data cell */
     if (this.isObject(data[meta.dataAcsr])) {
-      return this.objectCell(data[meta.dataAcsr], meta)
+      return this.objectCell(data[meta.dataAcsr])
     } else if (meta.filterType === 'date') {
-      return this.dateCell(data[meta.dataAcsr], meta);
+      return this.dateCell(data[meta.dataAcsr]);
     } else if (typeof data[meta.dataAcsr] === 'string' && meta.filterType !== 'date'){
-      return this.stringCell(data[meta.dataAcsr], meta);
+      return this.stringCell(data[meta.dataAcsr]);
     }
   }
 
-  stringCell = (data, meta) => {
+  stringCell = (data) => {
     return (
       <p className="data">{data}</p>
     );
   }
 
-  objectCell = (data, meta) => {
+  objectCell = (data) => {
     let lastCell = (i, length) => (i !== length - 1);
 
     return Object.keys(data).map((d, i) => {
       return (
-        <p className="data">
+        <p className="data" key={i}>
           {data[d]} {d}{lastCell(i, Object.keys(data).length) ? "," : null}
         </p>
       );
     });
   }
 
-  dateCell = (data, meta) => {
+  dateCell = (data) => {
     if (data !== null) {
       return (
         <p className="data">

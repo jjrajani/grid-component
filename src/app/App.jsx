@@ -26,11 +26,12 @@ export default class App extends Component {
       <div className='app'>
         <Filter
           applyFilter={this.applyFilter}
-          filterData={this.animals}
+          colMeta={ANIMAL_COL_META}
+          filterData={this.animals || []}
         />
         <Grid
           colMeta={ANIMAL_COL_META}
-          gridData={this.animals}
+          gridData={this.animals || []}
         />
       </div>
     );
