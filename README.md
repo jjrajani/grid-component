@@ -1,6 +1,6 @@
-[Surge](http://humdrum-grid-component-react.surge.sh/)
+[Live Example](http://humdrum-grid-component-react.surge.sh/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+A grid component built with React.
 
 ## Installation
 ```
@@ -10,7 +10,7 @@ npm install
 npm start
 ```
 
-to run tests
+## Testing
 ```
 npm test
 ```
@@ -79,3 +79,4 @@ my-app/
       utils/
         months.js
 ```
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
