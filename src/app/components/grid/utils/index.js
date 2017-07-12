@@ -1,5 +1,5 @@
-import sortStore from './sort_store';
+import SortStore from './sort_store';
 
 export {
-  sortStore,
+  SortStore,
 }

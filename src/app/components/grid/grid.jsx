@@ -4,11 +4,12 @@ import { observable } from 'mobx';
 import moment from 'moment';
 import './grid.scss';
 
-import { sortStore } from './utils';
+import { SortStore } from './utils';
 
 @observer
 export default class Grid extends Component {
   @observable _gridData = [];
+  sortStore = new SortStore();
 
   componentWillReceiveProps(next) {
     this._gridData = this._sort(next.gridData);
@@ -16,11 +17,11 @@ export default class Grid extends Component {
 
   _sort = (data) => {
     /* get sort type from colMeta */
-    let sortType = this.props.colMeta[sortStore._sortIndex].sortType;
+    let sortType = this.props.colMeta[this.sortStore._sortIndex].sortType;
     /* get data accessor from colMeta */
-    let dataAcsr = this.props.colMeta[sortStore._sortIndex].dataAcsr;
+    let dataAcsr = this.props.colMeta[this.sortStore._sortIndex].dataAcsr;
     /* sort dataAcsr column with sortType funtion */
-    return sortStore.sortFunctions[sortType](data, dataAcsr);
+    return this.sortStore.sortFunctions[sortType](data, dataAcsr);
   }
 
   render() {
@@ -55,11 +56,17 @@ export default class Grid extends Component {
   _sortButtons = (index) => {
     return (
       <div className="sort-buttons">
-        <p className={(this._isSortedBy(index) && sortStore._sortOrder === "asc") ? "active-sort" : ""}>
-          <i onClick={this.resort.bind(this, 'asc', index)} className="fa fa-long-arrow-up"></i>
+        <p>
+          <i
+            className={(this._isSortedBy(index) && this.sortStore._sortOrder === "asc") ? "active-sort fa fa-sort-asc" : "fa fa-sort-asc"}
+            onClick={this.resort.bind(this, 'asc', index)}
+          />
         </p>
-        <p className={(this._isSortedBy(index) && sortStore._sortOrder === "dec") ? "active-sort" : ""}>
-          <i onClick={this.resort.bind(this, 'dec', index)} className="fa fa-long-arrow-down"></i>
+        <p>
+          <i
+            className={(this._isSortedBy(index) && this.sortStore._sortOrder === "dec") ? "active-sort fa fa-sort-desc" : "fa fa-sort-desc"}
+            onClick={this.resort.bind(this, 'dec', index)}
+          />
         </p>
       </div>
     );
@@ -144,6 +151,10 @@ export default class Grid extends Component {
           {moment(data).format('LL')}
         </p>
       );
+    } else {
+      return (
+        <p className="data"></p>
+      );
     }
   }
 
@@ -156,12 +167,12 @@ export default class Grid extends Component {
   _isSortedBy = (index) => {
     /* Check used on line 58 and 61 to determine
        active class state for grid sort arrow icons */
-    return sortStore._sortIndex === index;
+    return this.sortStore._sortIndex === index;
   }
 
   resort = (order, index) => {
     /* reset observables that sort function depends on */
-    sortStore.resort(order, index);
+    this.sortStore.resort(order, index);
     /* rerun sort function */
     this._gridData = this._sort(this._gridData);
   }

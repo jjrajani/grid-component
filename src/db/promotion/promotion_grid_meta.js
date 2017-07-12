@@ -6,7 +6,7 @@ const PROMOTION_GRID_META = [
   },
   {
     dataAcsr: 'eventStart',
-    displayName: 'Promotion Begins',
+    displayName: 'Begins',
     sortType: 'date',
   },
   {
@@ -17,7 +17,7 @@ const PROMOTION_GRID_META = [
   },
   {
     dataAcsr: 'department',
-    displayName: 'department',
+    displayName: 'Dept.',
     sortType: 'string',
   },
   {

@@ -40,12 +40,10 @@ class SortStore {
 
   resort = (order, index) => {
     /* reset observables that sort functions depend on */
-    sortStore._sortOrder = order;
-    sortStore._sortIndex = index;
+    this._sortOrder = order;
+    this._sortIndex = index;
   }
 
 }
 
-let sortStore = new SortStore();
-export default sortStore;
-export { SortStore };
+export default SortStore;
