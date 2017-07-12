@@ -7,7 +7,7 @@ export default class Header extends Component {
     return (
       <div className="header">
         <h3 className="title">
-          Grid Component
+          <a href="http://humdrum-grid-component-react.surge.sh/">Grid Component</a>
         </h3>
         <div className="links">
           <a href="https://jjrajani.github.io" target="blank">Jenna Rajani</a>

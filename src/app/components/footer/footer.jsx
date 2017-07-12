@@ -7,7 +7,7 @@ export default class Footer extends Component {
     return (
       <div className="footer">
         <h5 className="title">
-          grid component
+          <a href="http://humdrum-grid-component-react.surge.sh/">grid component</a>
         </h5>
         <div className="links">
           <a href="https://jjrajani.github.io" target="blank">Jenna Rajani</a>

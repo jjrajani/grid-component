@@ -12,6 +12,11 @@
   .links {
     display: flex;
     align-items: center;
+    a:last-child {
+      font-size: 1.2rem;
+    }
+  }
+  .title, .links {
     a {
       color: #63A46C;
       padding: 1vh 1.25vw;
@@ -19,7 +24,6 @@
       font-size: .8rem;
       &:last-child {
         padding-right: 0;
-        font-size: 1.2rem;
       }
       &:hover {
         color: orange;

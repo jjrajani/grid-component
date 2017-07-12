@@ -17,13 +17,17 @@ $green: #63A46C;
   .links {
     display: flex;
     align-items: baseline;
+    a:last-child {
+      font-size: 1.6rem;
+    }
+  }
+  .title, .links {
     a {
       color: white;
       padding: 1vh 1.25vw;
       cursor: pointer;
       &:last-child {
         padding-right: 0;
-        font-size: 1.6rem;
       }
       &:hover {
         color: orange;
