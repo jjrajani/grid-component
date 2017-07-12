@@ -11,7 +11,7 @@ const Animals = [
     species: 'Cat',
     dob: new Date(2011, 10, 1),
     dod: null,
-    age: { years: 5, months: 68 },
+    age: { years: 5, months: 8 },
   },
   {
     name: 'Bailey',

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Grid from './grid';
 import server from '../../../db/server';
-import { ANIMAL_COL_META } from '../../../db/animal';
+import { ANIMAL_GRID_META } from '../../../db/animal';
 
 
 describe('Grid component', () => {
@@ -13,6 +13,6 @@ describe('Grid component', () => {
     });
 
     const div = document.createElement('div');
-    ReactDOM.render(<Grid gridData={filterData} colMeta={ANIMAL_COL_META}/>, div);
+    ReactDOM.render(<Grid gridData={filterData} colMeta={ANIMAL_GRID_META}/>, div);
   });
 });

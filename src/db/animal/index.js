@@ -1,8 +1,10 @@
 import Animal from './animal';
-import ANIMAL_COL_META from './animal_col_meta';
+import Animals from './animals';
+import ANIMAL_GRID_META from './animal_grid_meta';
 
 
 export default Animal;
 export {
-  ANIMAL_COL_META,
+  ANIMAL_GRID_META,
+  Animals,
 }

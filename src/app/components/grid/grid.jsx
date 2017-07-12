@@ -7,6 +7,7 @@ import './grid.scss';
 export default class Grid extends Component {
 
   render() {
+    console.log(this.props.gridData)
     return (
       <div className="grid">
         <div className="grid-header">
@@ -69,14 +70,16 @@ export default class Grid extends Component {
       return this.objectCell(data[meta.dataAcsr])
     } else if (meta.filterType === 'date') {
       return this.dateCell(data[meta.dataAcsr]);
-    } else if (typeof data[meta.dataAcsr] === 'string' && meta.filterType !== 'date'){
-      return this.stringCell(data[meta.dataAcsr]);
+    } else if (typeof data[meta.dataAcsr] === 'string'){
+      return this.basicCell(data[meta.dataAcsr], meta);
+    } else if (typeof data[meta.dataAcsr] === 'number'){
+      return this.basicCell(data[meta.dataAcsr], meta);
     }
   }
 
-  stringCell = (data) => {
+  basicCell = (data, meta) => {
     return (
-      <p className="data">{data}</p>
+      <p className="data">{data} {meta.suffix ? meta.suffix : null}</p>
     );
   }
 

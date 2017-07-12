@@ -3,41 +3,43 @@ import { observer } from 'mobx-react';
 import { observable } from 'mobx';
 
 import './App.scss';
-import Filter from './components/filter';
+import Header from './components/header';
 import Grid from './components/grid';
+import Footer from './components/footer';
 import server from '../db/server';
-import { ANIMAL_COL_META } from '../db/animal';
+import { ANIMAL_GRID_META } from '../db/animal';
+import { PROMOTION_GRID_META } from '../db/promotion';
 
 @observer
 export default class App extends Component {
 
   @observable animals;
+  @observable promotions;
 
   constructor(props) {
     super(props);
     server.getAnimals().then((res) => {
        this.animals = res.data;
     });
+    server.getPromotions().then((res) => {
+       this.promotions = res.data;
+    });
   }
 
   render() {
-    console.log("APP", this.animals);
     return (
       <div className='app'>
-        <Filter
-          applyFilter={this.applyFilter}
-          colMeta={ANIMAL_COL_META}
-          filterData={this.animals || []}
-        />
+        <Header />
         <Grid
-          colMeta={ANIMAL_COL_META}
+          colMeta={ANIMAL_GRID_META}
           gridData={this.animals || []}
         />
+        <Grid
+          colMeta={PROMOTION_GRID_META}
+          gridData={this.promotions || []}
+        />
+      <Footer />
       </div>
     );
-  }
-
-  applyFilter = (data) => {
-    console.log("Applying filter on App", data)
   }
 }

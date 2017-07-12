@@ -1,4 +1,4 @@
-const ANIMAL_COL_META = [
+const ANIMAL_GRID_META = [
   {
     dataAcsr: 'name',
     displayName: 'Name',
@@ -26,4 +26,4 @@ const ANIMAL_COL_META = [
   },
 ];
 
-export default ANIMAL_COL_META;
+export default ANIMAL_GRID_META;
