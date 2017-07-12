@@ -1,4 +1,4 @@
-import { SortStore } from './sort_store';
+import SortStore from './sort_store';
 import {
   DATA,
   COLMETA,

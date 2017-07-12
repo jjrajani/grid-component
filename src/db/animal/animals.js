@@ -11,6 +11,6 @@ const Animals = [
   new Animal(['Donika',     'Human',    new Date(1985, 9, 25), null ]),
   new Animal(['Jenna',      'Human',    new Date(1989, 0, 30), null ]),
   new Animal(['Shrek',      'Ogre',     new Date(2001, 3, 22), null ]),
-]
+];
 
 export default Animals;

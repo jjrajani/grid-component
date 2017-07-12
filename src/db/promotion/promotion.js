@@ -8,7 +8,6 @@ export default class Promotion {
     this.eventStart = args[2];
     this.department = args[3];
     this.deal = args[4];
-    // this.timeLeft = calcTimeLeft(args[1], args[2]);
   }
 
 }

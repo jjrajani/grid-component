@@ -22,9 +22,5 @@ describe('Promotion', () => {
       expect(promotion.deal).toBe('FREE!!');
     });
   });
-
-  // describe('Promotion calculations', () => {
-  //
-  // });
-
-})
+  
+});
