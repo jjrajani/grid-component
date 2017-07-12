@@ -48,3 +48,4 @@ class SortStore {
 
 let sortStore = new SortStore();
 export default sortStore;
+export { SortStore };
