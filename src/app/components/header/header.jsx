@@ -7,11 +7,11 @@ export default class Header extends Component {
     return (
       <div className="header">
         <h3 className="title">
-          <a>Grid Component</a>
+          Grid Component
         </h3>
         <div className="links">
-          <a href="https://jjrajani.github.io">Jenna Rajani</a>
-          <a href="https://github.com/jjrajani/grid-component">GitHub</a>
+          <a href="https://jjrajani.github.io" target="blank">Jenna Rajani</a>
+          <a href="https://github.com/jjrajani/grid-component" target="blank2"><i className="fa fa-github"/></a>
         </div>
       </div>
     );
