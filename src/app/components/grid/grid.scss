@@ -59,6 +59,8 @@ $green: #63A46C;
     border-top: none;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
+    max-height: 400px;
+    overflow-x: scroll;
     .row {
       display: flex;
       border-bottom: solid $row_border_color 1px;
