@@ -3,14 +3,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Installation
-clone repo
-
 ```
+git clone https://github.com/jjrajani/grid-component.git
+cd grid-component
 npm install
-```
-```
 npm start
 ```
+
 to run tests
 ```
 npm test
