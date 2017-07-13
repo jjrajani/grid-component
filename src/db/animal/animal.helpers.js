@@ -29,7 +29,7 @@ const calcAge = (birthDate, deathDate) => {
   let birthday = new Date(birthDate);
   let deathday = new Date(deathDate);
 
-
+  /* if age is a string then the animal is still living */
   age = (typeof deathDate === "string") ?
     calcLivingAge(birthday) /* if animal is still living */
   : calcDeceasedAge(birthday, deathday); /* if animal has died */
