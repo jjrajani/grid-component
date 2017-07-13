@@ -1,4 +1,4 @@
-_sortColumnimport { observable } from 'mobx';
+import { observable } from 'mobx';
 
 class SortStore {
   /* _sortColumn used to find which colMeta[index] to sort by */
