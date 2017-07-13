@@ -147,7 +147,7 @@ export default class Grid extends Component {
   _dateCell = (data) => {
     /* Object Cell HTML */
     /* null check so moment does not return 'Invalid Date' */
-    if (data !== null) {
+    if (typeof data !== "string") {
       return (
         <p className="data">
           {moment(data).format('LL')}
@@ -155,7 +155,7 @@ export default class Grid extends Component {
       );
     } else {
       return (
-        <p className="data"></p>
+        <p className="data">{data}</p>
       );
     }
   }
