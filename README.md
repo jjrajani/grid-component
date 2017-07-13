@@ -1,7 +1,7 @@
 [Live Example](http://humdrum-grid-component-react.surge.sh/)
 
 A grid component built with React.
-
+___
 ## Installation
 ```
 git clone https://github.com/jjrajani/grid-component.git
@@ -9,19 +9,18 @@ cd grid-component
 npm install
 npm start
 ```
-
+___
 ## Testing
 ```
 npm test
 ```
-
-
+___
 ## Folder Structure
 
 After creation, your project should look like this:
 
 ```
-my-app/
+grid-component/
   README.md
   node_modules/
   package.json
