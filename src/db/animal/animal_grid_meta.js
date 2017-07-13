@@ -18,6 +18,7 @@ const ANIMAL_GRID_META = [
     dataAcsr: 'dod',
     displayName: 'DOD',
     sortType: 'date',
+    nullSuffix: 'Still Living'
   },
   {
     dataAcsr: 'age',

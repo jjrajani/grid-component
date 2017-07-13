@@ -104,14 +104,13 @@ export default class Grid extends Component {
 
   _buildCell = (data, meta) => {
     /* Determine type of data to create data cell */
-
     /* if data type is an object */
     if (this._isObject(data[meta.dataAcsr])) {
       return this._objectCell(data[meta.dataAcsr]);
     }
     /* if data type is a date */
     else if (meta.sortType === 'date') {
-      return this._dateCell(data[meta.dataAcsr]);
+      return this._dateCell(data[meta.dataAcsr], meta);
     }
     /* if data type is a string or number */
     else if (typeof data[meta.dataAcsr] === 'string' || typeof data[meta.dataAcsr] === 'number') {
@@ -152,11 +151,11 @@ export default class Grid extends Component {
     );
   }
 
-  _dateCell = (data) => {
+  _dateCell = (data, meta) => {
     /* Object Cell HTML */
     /* dataType check so moment does not return 'Invalid Date'.
        This is neccessary for Animal objects whose DOD is "Still Living". */
-    if (typeof data !== "string") {
+    if (typeof data === "object" && data !== null && data !== undefined) {
       /* Date Object Cell */
       return (
         <p className="data">
@@ -166,7 +165,7 @@ export default class Grid extends Component {
     } else {
       /* Animal whose DOD is "Still Living" */
       return (
-        <p className="data">{data}</p>
+        <p className="data">{meta.nullSuffix}</p>
       );
     }
   }
