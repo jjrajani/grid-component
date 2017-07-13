@@ -31,10 +31,8 @@ describe('Animal', () => {
 
   describe('Animal calculations', () => {
     it('Can calculate it`s living age', () => {
-
       var diff = new Date() - new Date(animal.dob); /* This is the difference in milliseconds */
       var age = Math.floor(diff/31557600000); /* Divide by 1000*60*60*24*365.25 */
-
       expect(animal.age.years).toBe(age);
     });
     it('Can calculate it`s deceased age', () => {
