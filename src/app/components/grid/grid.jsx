@@ -163,7 +163,9 @@ export default class Grid extends Component {
         </p>
       );
     } else {
-      /* Animal whose DOD is "Still Living" */
+      /* Animal whose DOD is null. */
+      /* Created meta.nullSuffix so the sort functions don't
+         have to deal with mixed content. */
       return (
         <p className="data">{meta.nullSuffix}</p>
       );
