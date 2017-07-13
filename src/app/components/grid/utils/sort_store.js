@@ -1,8 +1,8 @@
-import { observable } from 'mobx';
+_sortColumnimport { observable } from 'mobx';
 
 class SortStore {
-  /* _sortIndex used to find which colMeta[index] to sort by */
-  @observable _sortIndex = 0;
+  /* _sortColumn used to find which colMeta[index] to sort by */
+  @observable _sortColumn = 0;
   @observable _sortOrder = 'asc';
 
   /* Object look up for sort functions. Used on line 22 */
@@ -15,9 +15,9 @@ class SortStore {
 
   sort = (data, colMeta) => {
     /* get sort type from colMeta */
-    let sortType = colMeta[this._sortIndex].sortType;
+    let sortType = colMeta[this._sortColumn].sortType;
     /* get data accessor from colMeta */
-    let sortCol = colMeta[this._sortIndex].dataAcsr;
+    let sortCol = colMeta[this._sortColumn].dataAcsr;
     /* sort dataAcsr column with corresponding sortType function */
     return this.sortFunctions[sortType](data, sortCol);
   }
@@ -51,7 +51,7 @@ class SortStore {
   resort = (order, index, colMeta, data) => {
     /* reset observables that sort functions depend on */
     this._sortOrder = order;
-    this._sortIndex = index;
+    this._sortColumn = index;
     /* re-run sort function */
     return this.sort(data, colMeta);
   }
@@ -60,7 +60,7 @@ class SortStore {
     /* Check used on line 52 and 58 og grid.jsx
        to determine which colomn header recieves
        active class state for grid sort arrow icons */
-    return this._sortIndex === index;
+    return this._sortColumn === index;
   }
 
 }
