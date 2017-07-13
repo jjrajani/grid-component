@@ -1,5 +1,3 @@
-import calcTimeLeft from './promotion.helpers';
-
 export default class Promotion {
 
   constructor(args) {

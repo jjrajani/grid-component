@@ -2,12 +2,6 @@ import MONTHS from '../utils/months';
 
 let today = new Date();
 
-let calcTimeLeft = (duration, eventStart) => {
-  return today < eventStart
-    ? "Not Started Yet"
-    : currentEventTimeLeft(duration, eventStart);
-}
-
 let currentEventTimeLeft = (duration, eventStart) => {
   /* Last day of event */
   let lastDay = getLastDay(duration, eventStart);
