@@ -120,7 +120,7 @@ export default class Grid extends Component {
   _basicCell = (data, meta) => {
     /* Basic Cell HTML */
     return (
-      <p className="data">{data} {meta.suffix ? meta.suffix : null}</p>
+      <p className="data">{data + " " + (meta.suffix ? meta.suffix : "")}</p>
     );
   }
 
