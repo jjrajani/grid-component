@@ -47,7 +47,7 @@ export default class Grid extends Component {
           style={{width: (100 / this.props.colMeta.length)}}
         >
           <p>{meta.displayName}</p>
-          { this._sortButtons(i) }
+          { meta.sortType ? this._sortButtons(i) : null }
         </div>
       );
     });
