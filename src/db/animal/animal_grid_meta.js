@@ -18,7 +18,7 @@ const ANIMAL_GRID_META = [
     dataAcsr: 'dod',
     displayName: 'DOD',
     sortType: 'date',
-    nullSuffix: 'Still Living'
+    nullSuffix: 'Still Living' /* Reference grid.jsx line 154 _dateCell to see implementation */
   },
   {
     dataAcsr: 'age',

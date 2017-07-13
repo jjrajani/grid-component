@@ -17,9 +17,9 @@ class SortStore {
     /* get sort type from colMeta */
     let sortType = colMeta[this._sortIndex].sortType;
     /* get data accessor from colMeta */
-    let dataAcsr = colMeta[this._sortIndex].dataAcsr;
+    let sortCol = colMeta[this._sortIndex].dataAcsr;
     /* sort dataAcsr column with corresponding sortType function */
-    return this.sortFunctions[sortType](data, dataAcsr);
+    return this.sortFunctions[sortType](data, sortCol);
   }
 
   basicSort = (data, sortCol) => {
