@@ -49,7 +49,7 @@ class SortStore {
 
     /* less code but less readable */
     // let sortOrder = this._sortOrder === 'asc' ? -1 : 1;
-    //
+    // /* First sort by month, then sort by year */
     // return data.sort(
     //   (a, b) => ((a[sortCol].months - b[sortCol].months) * sortOrder)
     // ).sort(
