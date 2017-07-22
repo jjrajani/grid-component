@@ -46,6 +46,15 @@ class SortStore {
       : a[sortCol].years < b[sortCol].years ? 1 : -1;
     });
     return sortedByYear;
+
+    /* less code but less readable */
+    // let sortOrder = this._sortOrder === 'asc' ? -1 : 1;
+    //
+    // return data.sort(
+    //   (a, b) => ((a[sortCol].months - b[sortCol].months) * sortOrder)
+    // ).sort(
+    //   (a, b) => ((a[sortCol].years - b[sortCol].years) * sortOrder)
+    // );
   }
 
   resort = (order, index, colMeta, data) => {
